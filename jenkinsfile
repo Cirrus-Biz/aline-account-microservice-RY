@@ -64,8 +64,6 @@ pipeline {
 
     post {
         always {
-            sh 'docker context use default'
-            sh 'docker context rm ${AWS_PROFILE}'
             sh 'sudo docker system prune --all -f'
             sh 'sudo docker logout'
             sh 'sudo rm -rf ~/.aws/'
